@@ -3,12 +3,14 @@
 ## Reference
 - https://learn.microsoft.com/en-us/azure/app-service/configure-linux-open-ssh-session
 - https://learn.microsoft.com/en-us/azure/app-service/configure-custom-container?tabs=debian&pivots=container-linux
-- 
+ 
 ## Note
 - `init.sh` should be saved as `LF`, otherwise it will display an error `set: Illegal option -`
   - ``` sh
     init.sh: 2: set: Illegal option -
     ```
+  - https://stackoverflow.com/questions/35352955/set-illegal-option-on-one-host-but-not-the-other
+  - https://stackoverflow.com/questions/69055765/how-to-fix-illegal-option-error-when-compiling-a-dockerfile
 - When installing the SSH-related packages required for Azure App Service, you need to add export `DEBIAN_FRONTEND=noninteractive` before the apt-get install command to avoid getting stuck in the `interactive mode` of `apt-get`.
   - ``` sh
     => [5/5] RUN apt-get update     && apt-get install -y --no-install-recommends dialog     && apt-get    install -y -  8.8s
