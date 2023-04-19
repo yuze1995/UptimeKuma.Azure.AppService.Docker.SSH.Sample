@@ -1,6 +1,4 @@
-FROM louislam/uptime-kuma:1.21.2 as runtime
-
-WORKDIR /app
+FROM louislam/uptime-kuma:1.21.2 as release-with-ssh
 
 COPY ./config/init.sh .
 COPY ./config/sshd_config /etc/ssh/
