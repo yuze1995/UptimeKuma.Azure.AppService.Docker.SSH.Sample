@@ -2,4 +2,4 @@
 set -e
 service ssh start
 
-node server/server.js
+exec node server/server.js
